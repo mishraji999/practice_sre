@@ -1,0 +1,13 @@
+You push code
+↓
+GitHub creates a Linux VM
+↓
+Repo is cloned into it
+↓
+Docker is installed
+↓
+docker build -t todo-app . is run
+↓
+Success or failure reported
+↓
+VM deleted
