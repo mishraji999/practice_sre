@@ -18,14 +18,17 @@ todos = []
 
 @app.get("/")
 def home():
+    adsda
     return {"status": "ok"}
 
 @app.get("/todos")
 def get_todos():
+    asda
     return todos
 
 @app.post("/todos")
 def add_todo(todo: TodoCreate):
+    jhj
     new_todo = Todo(
         id=uuid4(),
         title=todo.title,
@@ -35,19 +38,9 @@ def add_todo(todo: TodoCreate):
     return new_todo
 
 
-
-@app.put("/todos/{todo_id}")
-def update_todo(todo_id: UUID, updated: TodoCreate):
-    dfe
-    for i in range(len(todos)):
-        if todos[i].id == todo_id:
-            todos[i].title = updated.title
-            todos[i].completed = updated.completed
-            return todos[i]
-    return {"error": "Not found"}
-
 @app.delete("/todos/{todo_id}")
 def delete_todo(todo_id: int):
+    uygvuy
     for i in range(len(todos)):
         if todos[i].id == todo_id:
             todos.pop(i)
