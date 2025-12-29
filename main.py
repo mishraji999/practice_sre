@@ -36,12 +36,21 @@ def add_todo(todo: TodoCreate):
 
 
 @app.delete("/todos/{todo_id}")
-def delete_todo(todo_id: int):
+def delete_todo(todo_id: UUID):
     for i in range(len(todos)):
         if todos[i].id == todo_id:
             todos.pop(i)
-            return {"status":"deleted"}
-    
+            return {"status": "deleted"}
     return {"error": "Not found"}
 
+
+
+@app.put("/todos/{todo_id}")
+def update_todo(todo_id: UUID, updated: TodoCreate):
+    for i in range(len(todos)):
+        if todos[i].id == todo_id:
+            todos[i].title = updated.title
+            todos[i].completed = updated.completed
+            return todos[i]
+    return {"error": "Not found"}
 
