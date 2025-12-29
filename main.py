@@ -18,17 +18,14 @@ todos = []
 
 @app.get("/")
 def home():
-    adsda
     return {"status": "ok"}
 
 @app.get("/todos")
 def get_todos():
-    asda
     return todos
 
 @app.post("/todos")
 def add_todo(todo: TodoCreate):
-    jhj
     new_todo = Todo(
         id=uuid4(),
         title=todo.title,
@@ -40,7 +37,6 @@ def add_todo(todo: TodoCreate):
 
 @app.delete("/todos/{todo_id}")
 def delete_todo(todo_id: int):
-    uygvuy
     for i in range(len(todos)):
         if todos[i].id == todo_id:
             todos.pop(i)
