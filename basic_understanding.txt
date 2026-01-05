@@ -1,3 +1,5 @@
+
+for basic Github CI:
 You push code
 ↓
 GitHub creates a Linux VM
@@ -11,3 +13,30 @@ docker build -t todo-app . is run
 Success or failure reported
 ↓
 VM deleted
+
+
+for basic Kubernetes understanding:
+Kubernetes is a system that runs your Docker images, keeps them alive, and gives users a stable way to access them.
+
+Minikube VM → Service → Pod → Container → FastAPI
+
+Minikube VM: fake server
+
+Service: door into the app
+
+Pod: wrapper Kubernetes controls
+
+Container: Docker image running
+
+FastAPI: your code
+
+
+when we did this ->
+'''''
+kubectl expose deployment todo-app --type=NodePort --port=8000
+You told Kubernetes:
+
+“Create a stable door in front of my app so outside traffic can reach it.”
+'''''
+
+
